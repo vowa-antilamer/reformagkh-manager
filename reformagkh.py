@@ -24,7 +24,7 @@ urls = {'login':'https://ais.reformagkh.ru/user/login',
 		'file_up':'https://ais.reformagkh.ru/files/up/',
 		'file_info':'https://ais.reformagkh.ru/files/info/',
 		'general_meeting_list':'https://ais.reformagkh.ru/d988/mkd-profile/general-meeting-list/8978890?_dc=1439430836865&page=1&start=0&limit=25',
-		'save_general_meeting':'https://ais.reformagkh.ru/d988/mkd-profile/save-general-meeting/$building_id$',
+		'save_general_meeting':'https://ais.reformagkh.ru/d988/mkd-profile/general-meeting/$building_id$',
 		'housing_services_registry':'https://ais.reformagkh.ru/d988/mkd-profile/housing-services-registry/$building_id$?_dc=1439453581117&page=1&start=0&limit=100',
 		'stop_housing_services_management':'https://ais.reformagkh.ru/d988/mkd-profile/stop-housing-services-management',
 		'housing_service':'https://ais.reformagkh.ru/d988/mkd-profile/housing-service/$building_id$',
@@ -357,8 +357,8 @@ class Reformagkh:
 		if jresponse['success']:
 			new_data = {}
 			new_data['data'] = param_string.replace('$number$',str(number)).replace('$file_id$',str(jresponse['data']['id']))
-			new_data['combobox-1479-inputEl'] = 25
-			new_data['hasCommonMeeting'] = 462
+			#new_data['combobox-1479-inputEl'] = 25
+			new_data['houseProfile[hasHouseCommonMeetings]'] = 462
 			sd = date.split('.')
 			sd = sd[2]+'-'+sd[1]+'-'+sd[0]
 			new_data['data'] = new_data['data'].replace('$date$',sd)
